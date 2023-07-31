@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Vue Hello</title>
-    <script src="https://unpkg.com/vue"></script>
-<meta charset="UTF-8">
 </head>
 <body>
     <div id="app">
-        {{ message }}        
+        {{ message }}
     </div>
-
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script>
-   const app = new Vue ({ 
-    el: '#app',
-    
-    data: {
-        message: 'Hello World!!',
-        
-        }
-    });
 
+   const app = Vue.createApp({
+     el: '#app',
+    data() {
+        return {
+          message: 'Hello World!!'
+        }
+
+        }
+    })
+app.mount('#app')
 </script>
 </body>
 </html>

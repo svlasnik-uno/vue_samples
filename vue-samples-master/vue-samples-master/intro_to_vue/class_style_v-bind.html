@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <title>class style v-bind</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
+
 </head>
 <body>
 
@@ -14,20 +15,22 @@
         </div>
 
         <div class="row justify-content-center mt-3">
-            <button class="btn btn-primary" @click="changeShape">Change Shape</button>
+            <button class="btn btn-primary btn-lg" style="width: 200px" @click="changeShape">Change Shape</button>
         </div>
     </div>
     
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script>
-var app = new Vue({
+var app = Vue.createApp({
     el: "#app",
-    data: {
+    data() {
+      return {
         flag: true,
         styleObject: { 
             backgroundColor: 'blue' 
             
         }
+      }
     },
     methods: {
         changeShape() {
@@ -35,7 +38,9 @@ var app = new Vue({
         }
     }
 }) 
+app.mount('#app')
 </script>
+
 <style>
     .circle {
         width: 250px;
@@ -51,6 +56,5 @@ var app = new Vue({
         height: 500px;
     }
 </style>
-
 </body>
 </html>
