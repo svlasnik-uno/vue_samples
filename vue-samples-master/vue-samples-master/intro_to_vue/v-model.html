@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>v-model</title>
     <script src="https://unpkg.com/vue"></script>
@@ -7,20 +7,21 @@
 </head>
 <body>
     <div id="app">
-        <h2>{{ message }}</h2>     
+        <h2>{{ message }}</h2>
         <input v-model="message" class="form-control">
     </div>
 
 <script>
-   const app = new Vue ({ 
+   const app = Vue.createApp({
     el: '#app',
-    
-    data: {
-        message: 'Enter your name ..',
-        
-        }
-    });
 
+    data() {
+      return {
+        message: 'Enter your name ..',
+      }
+    }
+    });
+app.mount('#app')
 </script>
 </body>
 </html>

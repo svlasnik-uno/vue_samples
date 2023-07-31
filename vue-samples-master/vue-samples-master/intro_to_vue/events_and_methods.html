@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Events and Methods</title>
-        
     <meta charset="UTF-8">
 </head>
 <body>
@@ -10,17 +9,18 @@
         <h1>{{ lesson }}</h1>
         <br>
         <h3>Counter: {{ counter}}</h3>
-        <button v-on:click="incrementCounter">Increment ++</button>
-        
+        <button v-on:click="incrementCounter">Increment++</button>
+
     </div>
-<<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue"></script>
 <script>
-   const app = new Vue ({ 
+   const app = Vue.createApp({
     el: '#app',
-    
-    data: {
+    data() {
+      return {
         lesson: "Events and Methods",
         counter: 0
+      }
     },
     methods: {
         incrementCounter(){
@@ -30,14 +30,11 @@
                 alert("Counter is at 5!")
             }
         }
-        
-    }  
+    }
     });
+   app.mount('#app')
 </script>
 <style>
-
 </style>
-
-
 </body>
 </html>

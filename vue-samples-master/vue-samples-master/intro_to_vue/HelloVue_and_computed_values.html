@@ -1,42 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Vue Hello</title>
-    <script src="https://unpkg.com/vue"></script>
-<meta charset="UTF-8">
+  <title>Vue Hello</title>
+  <script src="https://unpkg.com/vue"></script>
+  <meta charset="UTF-8">
 </head>
 <body>
-    <div id="app">
-        <h1>{{ message }}</h1>
-        <h2>{{ price }}</h2>
-        <h2>{{ details }}</h2>
-        <h2>{{ messageToLower }}</h2>
-        <h2>{{Math.random()}}</h2>
-        <img v-bind:src="imgSrc" alt="">
-    </div>
+<div id="app">
+  <h1>{{ message }}</h1>
+  <h2>{{ price }}</h2>
+  <h2>{{ details }}</h2>
+  <h2>{{ messageToLower }}</h2>
+  <h2>{{Math.random()}}</h2>
+  <img v-bind:src="imgSrc" alt="">
+</div>
 
 <script>
-   const app = new Vue ({ 
+  const app = Vue.createApp({
     el: '#app',
-    
-    data: {
+    data() {
+      return {
         message: 'Hello World!!',
         price: 18 * 8,
-        details: ['one', 'two','three'],
+        details: ['one', 'two', 'three'],
         imgSrc: "https://i.imgur.com/oWGITmg.png"
+      }
     },
-        computed: {
-            messageToLower() {
-                return this.message.toLowerCase();
-            }
+    computed: {
+        messageToLower() {
+          return this.message.toLowerCase();
         }
-    });
-
+      }
+  })
+  app.mount('#app')
 </script>
 <style>
-
 </style>
-
-
 </body>
 </html>

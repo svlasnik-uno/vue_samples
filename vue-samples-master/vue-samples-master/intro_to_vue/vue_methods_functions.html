@@ -11,15 +11,17 @@
 		</div>
 		<script src="https://unpkg.com/vue"></script>
 		<script type="text/javascript">
-		const app = new Vue({
+   const app = Vue.createApp({
 			el: '#app',
-			data: {
-				shirtPrice: 25,
-				hatPrice: 10,
+    data() {
+      return {
+        shirtPrice: 25,
+        hatPrice: 10,
 
-				currency: '$',
-				salesTax: 7.25
-			},
+        currency: '$',
+        salesTax: 7.25
+      }
+    },
 			computed: {
 				shirtCost() {
 					return this.addCurrency(this.calculateSalesTax(this.shirtPrice))
@@ -41,6 +43,7 @@
 				}
 			}
 		});
+     app.mount('#app')
 		</script>
 	</body>
 </html>
